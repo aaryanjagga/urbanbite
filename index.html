@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrbanBite | Delicious Food, Delivered Fast</title>
+    
+    <!-- Google Fonts for Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0a0a0a',
+                            gray: '#171717',
+                            light: '#262626',
+                            primary: '#ea580c', // Orange-600
+                            hover: '#c2410c', // Orange-700
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-brand-dark text-white font-sans antialiased selection:bg-brand-primary selection:text-white">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-brand-dark/90 backdrop-blur-md border-b border-white/5 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <a href="#" class="text-2xl md:text-3xl font-extrabold tracking-tight text-white">
+                Urban<span class="text-brand-primary">Bite</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#menu" class="text-gray-300 hover:text-brand-primary transition font-medium">Menu</a>
+                <a href="#about" class="text-gray-300 hover:text-brand-primary transition font-medium">About</a>
+                <a href="#features" class="text-gray-300 hover:text-brand-primary transition font-medium">Why Us</a>
+                <a href="#menu" class="bg-brand-primary hover:bg-brand-hover text-white px-6 py-2.5 rounded-full font-semibold transition-all transform hover:scale-105 shadow-lg shadow-brand-primary/30">Order Now</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-white p-2 focus:outline-none">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="md:hidden hidden bg-brand-gray border-t border-white/10 absolute w-full left-0 top-full shadow-2xl">
+            <div class="px-4 pt-2 pb-6 space-y-4 flex flex-col items-center">
+                <a href="#menu" class="mobile-link block text-gray-300 hover:text-brand-primary transition text-lg font-medium pt-4">Menu</a>
+                <a href="#about" class="mobile-link block text-gray-300 hover:text-brand-primary transition text-lg font-medium">About</a>
+                <a href="#features" class="mobile-link block text-gray-300 hover:text-brand-primary transition text-lg font-medium">Why Us</a>
+                <a href="#menu" class="mobile-link w-full text-center bg-brand-primary hover:bg-brand-hover text-white px-6 py-3 rounded-full font-bold transition-colors mt-4">Order Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. HERO SECTION -->
+    <header id="home" class="relative min-h-screen flex items-center justify-center pt-20">
+        <!-- Background Image & Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2070&auto=format&fit=crop" alt="Delicious Food Background" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/90 via-brand-dark/80 to-brand-dark"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center">
+            <div class="inline-flex items-center gap-2 bg-brand-light/50 backdrop-blur-sm border border-white/10 px-4 py-2 rounded-full mb-6">
+                <div class="flex text-yellow-400">
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </div>
+                <span class="text-sm font-medium text-gray-200">Rated 4.8 by 500+ customers</span>
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+                Delicious Food, <br class="hidden md:block"/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-yellow-500">Delivered Fast</span>
+            </h1>
+            
+            <p class="text-lg md:text-2xl text-gray-300 mb-10 max-w-2xl font-light">
+                Fresh ingredients. Authentic taste. Order now and satisfy your cravings in minutes.
+            </p>
+            
+            <a href="#menu" class="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-200 bg-brand-primary font-sans rounded-full hover:bg-brand-hover hover:scale-105 shadow-[0_0_40px_rgba(234,88,12,0.4)]">
+                Order Now
+                <i data-lucide="arrow-right" class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- 2. MENU PREVIEW -->
+    <section id="menu" class="py-24 bg-brand-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Our Popular Dishes</h2>
+                <div class="w-24 h-1 bg-brand-primary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1: Burger -->
+                <div class="bg-brand-gray rounded-2xl overflow-hidden shadow-xl border border-white/5 group hover:border-brand-primary/50 transition-colors">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=800&auto=format&fit=crop" alt="Burger" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-2xl font-bold">Classic Burger</h3>
+                            <span class="text-xl font-bold text-brand-primary">₹199</span>
+                        </div>
+                        <button class="w-full bg-brand-light hover:bg-brand-primary text-white py-3 rounded-xl font-semibold transition-colors flex justify-center items-center gap-2">
+                            <i data-lucide="shopping-bag" class="w-4 h-4"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 2: Pizza -->
+                <div class="bg-brand-gray rounded-2xl overflow-hidden shadow-xl border border-white/5 group hover:border-brand-primary/50 transition-colors">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?q=80&w=800&auto=format&fit=crop" alt="Pizza" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-2xl font-bold">Pepperoni Pizza</h3>
+                            <span class="text-xl font-bold text-brand-primary">₹299</span>
+                        </div>
+                        <button class="w-full bg-brand-light hover:bg-brand-primary text-white py-3 rounded-xl font-semibold transition-colors flex justify-center items-center gap-2">
+                            <i data-lucide="shopping-bag" class="w-4 h-4"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 3: Pasta -->
+                <div class="bg-brand-gray rounded-2xl overflow-hidden shadow-xl border border-white/5 group hover:border-brand-primary/50 transition-colors">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?q=80&w=800&auto=format&fit=crop" alt="Pasta" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-2xl font-bold">Creamy Pasta</h3>
+                            <span class="text-xl font-bold text-brand-primary">₹249</span>
+                        </div>
+                        <button class="w-full bg-brand-light hover:bg-brand-primary text-white py-3 rounded-xl font-semibold transition-colors flex justify-center items-center gap-2">
+                            <i data-lucide="shopping-bag" class="w-4 h-4"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 4: Dessert -->
+                <div class="bg-brand-gray rounded-2xl overflow-hidden shadow-xl border border-white/5 group hover:border-brand-primary/50 transition-colors">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?q=80&w=800&auto=format&fit=crop" alt="Dessert" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-2xl font-bold">Choco Lava Cake</h3>
+                            <span class="text-xl font-bold text-brand-primary">₹149</span>
+                        </div>
+                        <button class="w-full bg-brand-light hover:bg-brand-primary text-white py-3 rounded-xl font-semibold transition-colors flex justify-center items-center gap-2">
+                            <i data-lucide="shopping-bag" class="w-4 h-4"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ABOUT SECTION -->
+    <section id="about" class="py-20 bg-brand-gray border-y border-white/5">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <i data-lucide="utensils-crossed" class="w-12 h-12 mx-auto text-brand-primary mb-6"></i>
+            <h2 class="text-3xl md:text-5xl font-bold mb-8">The UrbanBite Promise</h2>
+            <p class="text-xl md:text-3xl font-light leading-relaxed text-gray-300">
+                “UrbanBite serves <span class="text-white font-medium">fresh, high-quality meals</span> made with passion and delivered with <span class="text-brand-primary font-medium">speed</span>.”
+            </p>
+        </div>
+    </section>
+
+    <!-- 4. WHY CHOOSE US -->
+    <section id="features" class="py-24 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                <!-- Feature 1 -->
+                <div class="p-6 rounded-2xl bg-brand-gray/50 border border-white/5 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-20 h-20 mx-auto bg-brand-light rounded-full flex items-center justify-center mb-6">
+                        <i data-lucide="bike" class="w-10 h-10 text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Fast Delivery</h3>
+                    <p class="text-gray-400">Hot and fresh food delivered to your doorstep in under 30 minutes.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="p-6 rounded-2xl bg-brand-gray/50 border border-white/5 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-20 h-20 mx-auto bg-brand-light rounded-full flex items-center justify-center mb-6">
+                        <i data-lucide="leaf" class="w-10 h-10 text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Fresh Ingredients</h3>
+                    <p class="text-gray-400">We source locally and cook daily. No compromises on quality.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="p-6 rounded-2xl bg-brand-gray/50 border border-white/5 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-20 h-20 mx-auto bg-brand-light rounded-full flex items-center justify-center mb-6">
+                        <i data-lucide="award" class="w-10 h-10 text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Top Rated</h3>
+                    <p class="text-gray-400">Loved by locals. 500+ glowing reviews for our amazing taste.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. TESTIMONIALS -->
+    <section class="py-24 bg-brand-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">What Our Customers Say</h2>
+                <div class="w-16 h-1 bg-brand-primary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Review 1 -->
+                <div class="bg-brand-dark p-8 rounded-2xl border border-white/5 relative">
+                    <i data-lucide="quote" class="absolute top-6 right-8 w-12 h-12 text-white/5"></i>
+                    <div class="flex text-yellow-400 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-xl text-gray-300 italic mb-6">“Best burger I’ve had in years! The delivery was super fast and the packaging kept everything warm.”</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-brand-light rounded-full flex items-center justify-center font-bold text-xl text-brand-primary">R</div>
+                        <div>
+                            <h4 class="font-bold">Rahul Sharma</h4>
+                            <span class="text-sm text-gray-500">Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-brand-dark p-8 rounded-2xl border border-white/5 relative">
+                    <i data-lucide="quote" class="absolute top-6 right-8 w-12 h-12 text-white/5"></i>
+                    <div class="flex text-yellow-400 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-xl text-gray-300 italic mb-6">“Quick delivery and amazing taste. The creamy pasta is highly recommended for late-night cravings.”</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-brand-light rounded-full flex items-center justify-center font-bold text-xl text-brand-primary">N</div>
+                        <div>
+                            <h4 class="font-bold">Neha Verma</h4>
+                            <span class="text-sm text-gray-500">Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. CTA SECTION -->
+    <section class="py-24 bg-brand-primary relative overflow-hidden">
+        <!-- Abstract shape background -->
+        <div class="absolute inset-0 opacity-10">
+            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 C 20 0 50 0 100 100 Z" fill="white"></path>
+            </svg>
+        </div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-6xl font-extrabold text-white mb-6">Hungry? Don't Wait!</h2>
+            <p class="text-xl md:text-2xl text-white/90 mb-10">Order Your Meal Now and experience the best food in town.</p>
+            <a href="#menu" class="inline-block bg-white text-brand-dark hover:bg-gray-100 px-10 py-5 rounded-full font-bold text-xl transition-transform transform hover:scale-105 shadow-xl">
+                Order Now
+            </a>
+        </div>
+    </section>
+
+    <!-- 7. FOOTER -->
+    <footer class="bg-[#050505] pt-16 pb-8 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <!-- Brand Info -->
+                <div class="text-center md:text-left">
+                    <a href="#" class="text-3xl font-extrabold tracking-tight text-white inline-block mb-4">
+                        Urban<span class="text-brand-primary">Bite</span>
+                    </a>
+                    <p class="text-gray-400">Your favorite food, delivered hot and fresh directly to your door.</p>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="text-center md:text-left">
+                    <h4 class="text-xl font-bold mb-4 text-white">Contact Us</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-center justify-center md:justify-start gap-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-brand-primary"></i>
+                            +91 98765 43210
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-brand-primary"></i>
+                            Sector 17, Chandigarh, India
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Socials -->
+                <div class="text-center md:text-left">
+                    <h4 class="text-xl font-bold mb-4 text-white">Follow Us</h4>
+                    <div class="flex items-center justify-center md:justify-start gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-brand-light flex items-center justify-center hover:bg-brand-primary hover:text-white transition-colors text-gray-400">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-brand-light flex items-center justify-center hover:bg-brand-primary hover:text-white transition-colors text-gray-400">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-brand-light flex items-center justify-center hover:bg-brand-primary hover:text-white transition-colors text-gray-400">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2026 UrbanBite. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
