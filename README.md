@@ -7,6 +7,7 @@ A modern and responsive restaurant landing page designed to deliver a smooth use
 - HTML5
 - Tailwind CSS
 - JavaScript (ES6)
+
 ✨ Features
 
 - Mobile-first responsive design
